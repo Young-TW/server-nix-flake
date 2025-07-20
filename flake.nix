@@ -16,10 +16,10 @@
         packages.default = pkgs.hello;
       }
     ) // {
-      nixosConfigurations.server01 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.forgejo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/server01/configuration.nix
+          ./hosts/forgejo/configuration.nix
         ];
       };
     };
