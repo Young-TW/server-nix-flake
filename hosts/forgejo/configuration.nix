@@ -112,7 +112,7 @@
         ROOT_URL = "http://localhost:3000/";
         DOMAIN = "localhost";
         HTTP_PORT = 3000;
-        DISABLE_SSH = true;
+        DISABLE_SSH = flase;
       };
       ssh ={
         START_SSH_SERVER = true;
