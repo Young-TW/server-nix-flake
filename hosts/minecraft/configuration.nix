@@ -3,10 +3,11 @@
   imports = [
     disko.nixosModules.disko
     ./disko.nix
-    ../../modules/boot-auto.nix
   ];
 
-  boot.auto.bootDisk = "/dev/sda";
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.devices = [ "/dev/vda" ];
 
   users.users.minecraft-server = {
     isSystemUser = true;
