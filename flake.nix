@@ -18,19 +18,19 @@
       nixosConfigurations.forgejo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/forgejo/configuration.nix ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { disko = inputs.disko; };
       };
 
       nixosConfigurations.caddy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/caddy/configuration.nix ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { disko = inputs.disko; };
       };
 
       nixosConfigurations.minecraft = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/minecraft/configuration.nix ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { disko = inputs.disko; };
       };
     };
 }
