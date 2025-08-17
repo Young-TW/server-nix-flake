@@ -22,5 +22,17 @@
           ./hosts/forgejo/configuration.nix
         ];
       };
+      nixosConfigurations.caddy = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/caddy/configuration.nix
+        ];
+      };
+      nixosConfigurations.minecraft = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/minecraft/configuration.nix
+        ];
+      };
     };
 }
