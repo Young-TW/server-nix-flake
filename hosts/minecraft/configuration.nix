@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    inputs.disko.nixosModules.disko
+    ./disko.nix
+  ];
+
+  # UEFI
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   users.users.minecraft-server = {
     isSystemUser = true;
