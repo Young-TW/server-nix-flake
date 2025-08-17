@@ -3,11 +3,10 @@
   imports = [
     disko.nixosModules.disko
     ./disko.nix
+    ../../modules/boot-auto.nix
   ];
 
-  # UEFI
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.auto.bootDisk = "/dev/sda";
 
   users.users.minecraft-server = {
     isSystemUser = true;
