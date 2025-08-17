@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  # 若這台有對應的硬體檔，記得引入
-  # imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
 
   users.users.minecraft-server = {
     isSystemUser = true;
