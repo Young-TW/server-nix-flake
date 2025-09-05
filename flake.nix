@@ -27,5 +27,9 @@
         system = "x86_64-linux";
         modules = [ ./hosts/minecraft/configuration.nix ];
       };
+      nixosConfigurations.jellyfin = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/jellyfin/configuration.nix ];
+      };
     };
 }
